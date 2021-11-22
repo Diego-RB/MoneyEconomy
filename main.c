@@ -8,8 +8,15 @@
 #include "sobre.c"
 
 int opcao;
+// struct Gastos
+// {
+//     char *Nome;
+//     float Valor;
+// };
 
-int main (void){
+// struct Gastos gastos[] = {{" ", 0.0}};
+
+void main (){
    
    SetConsoleOutputCP(65001);
    printf("BEM VINDO!");
@@ -26,7 +33,7 @@ int main (void){
 
       case 1:
          //printf("Cadastrar gastos\n"),
-         gastos();
+         //CadastroGastos();
          system("pause");
          goto menu;
 
@@ -36,7 +43,7 @@ int main (void){
          goto menu;
       
       case 3:
-         printf("SOBRE NÓS\n");
+         Sobre();
          system("pause");
          goto menu;
 
@@ -45,5 +52,4 @@ int main (void){
          system("pause");
          goto menu;
    }
-    return 0;
 }
