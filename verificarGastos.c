@@ -1,12 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void coluna(){}
+
 void verificarGastos(){
     printf("VERIFICAR GASTOS\n");
 
-    float valor[] = {0}, val;
-    char nome[] = {" "};
-    int k=0;
+    float valor[2000], val;
+    char nome[300], nomeGastos[][150] = {" "};;
+    int linhasValor=0, linhasNome=0,linhas=0;
 
     FILE *valorDespesa;
     valorDespesa = fopen("valorDespesa.txt", "r");
@@ -18,7 +20,7 @@ void verificarGastos(){
     }
 
     FILE *nomeDespesa;
-    nomeDespesa = fopen("valorDespesa.txt", "r");
+    nomeDespesa = fopen("nomeDespesa.txt", "r");
     
     if(nomeDespesa == NULL){
         printf("Arquivo não pode ser aberto");
@@ -28,43 +30,41 @@ void verificarGastos(){
 
     while (fscanf(valorDespesa, "%f", &val) != EOF)
     {
-        valor[k] = val;
-        k++;
+        //printf("\n\nNúmero de linhasValor no arquivo: %d\n", linhasValor);
+        
+        valor[linhasValor] = val;
+        //printf("%.2f\n",val);
+        linhasValor++;
     }
 
-    while (fscanf(nomeDespesa, "%s", nome) != EOF)
+    while (fgets(nomeGastos[linhasNome], 5000, nomeDespesa ) != NULL)
     {
-        printf("%s\n",nome);
+         //= nome;
+        //printf("%s\n",nome);
+        linhasNome++;
     }
     
 
-    int ch = 0;
-    int linhas = 0;
-
-    while (!feof(valorDespesa)) {
-        ch = fgetc(valorDespesa);
-
-        if (ch == '\n') {
-            linhas++;
-        }
+    for(int i=0;i<linhasValor;i++){
+        printf("%.2f\n", valor[i]);
     }
 
-    // for(int i=0;i<linhas;i++){
-    //     fscanf(valorDespesa, "%f",&valor[i]);
-    // }
+    //printf("\n\nNúmero de linhasValor no arquivo: %d\n", linhasValor);
+    for(int i=0;i<linhasNome;i++){
 
-    for(int i=0;i<linhas;i++){
-
-        printf("%f\n", valor[i]);
+        printf("%s", nomeGastos[i]);
     }
 
     //while(fgets())
-    fclose(valorDespesa);
     fclose(nomeDespesa);
-    // printf ("\t*------------------------------------------------------*\n");    
-    // printf ("\t|                    VALORES|GASTOS                    |\n");
-    // printf ("\t*------------------------------------------------------*\n");
-    // printf ("\t| %s                           | %.2f                  |\n", gastos[0].Nome, gastos[0].Valor);
-    // printf ("\t*------------------------------------------------------*\n");
+    fclose(valorDespesa);
+    
+        printf ("\t*------------------------------------------------------*\n");    
+        printf ("\t|VALORES                    |GASTOS                    |\n");
+        printf ("\t*------------------------------------------------------*\n");
+    for(int i=0;i<linhasValor;i++){
+        printf ("\t| %s                                    | %.2f                    |\n", nomeGastos[i], valor[i]);
+        printf ("\t*------------------------------------------------------*\n");
+    }
 
 }

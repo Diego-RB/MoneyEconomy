@@ -8,7 +8,7 @@
 #include "sobre.c"
 
 
-int opcao;
+
 // struct Gastos
 // {1
 //     char Nome[150];
@@ -18,10 +18,10 @@ int opcao;
 //struct Gastos gastos[] = {{" ", 0.0}};
 
 void main (){
-   
+   int opcao;
+
    SetConsoleOutputCP(65001);
    printf("BEM VINDO!");
-
    menu:
    opcao = menu();
    system("cls");
@@ -50,7 +50,7 @@ void main (){
          goto menu;
 
       default:
-         printf("\n\tA apção selecionada não existe. Tente novamente!\n\n");
+         printf("\n\tA opção selecionada não existe. Tente novamente!\n\n");
          system("pause");
          goto menu;
    }
