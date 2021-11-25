@@ -7,14 +7,15 @@
 #include "verificarGastos.c"
 #include "sobre.c"
 
+
 int opcao;
 // struct Gastos
-// {
-//     char *Nome;
+// {1
+//     char Nome[150];
 //     float Valor;
 // };
 
-// struct Gastos gastos[] = {{" ", 0.0}};
+//struct Gastos gastos[] = {{" ", 0.0}};
 
 void main (){
    
@@ -32,13 +33,14 @@ void main (){
          break;
 
       case 1:
-         //printf("Cadastrar gastos\n"),
-         //CadastroGastos();
+         printf("Cadastrar gastos\n"),
+         CadastroGastos();
          system("pause");
          goto menu;
 
       case 2:
-         printf("VERIFICAR GASTOS\n");
+         
+         verificarGastos();
          system("pause");
          goto menu;
       
