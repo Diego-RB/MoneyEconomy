@@ -45,15 +45,15 @@ void verificarGastos(){
     }
     
 
-    for(int i=0;i<linhasValor;i++){
-        printf("%.2f\n", valor[i]);
-    }
+    // for(int i=0;i<linhasValor;i++){
+    //     printf("%.2f\n", valor[i]);
+    // }
 
-    //printf("\n\nNúmero de linhasValor no arquivo: %d\n", linhasValor);
-    for(int i=0;i<linhasNome;i++){
+    // //printf("\n\nNúmero de linhasValor no arquivo: %d\n", linhasValor);
+    // for(int i=0;i<linhasNome;i++){
 
-        printf("%s", nomeGastos[i]);
-    }
+    //     printf("%s", nomeGastos[i]);
+    // }
 
     //while(fgets())
     fclose(nomeDespesa);
