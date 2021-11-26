@@ -30,32 +30,15 @@ void verificarGastos(){
 
     while (fscanf(valorDespesa, "%f", &val) != EOF)
     {
-        //printf("\n\nNúmero de linhasValor no arquivo: %d\n", linhasValor);
-        
         valor[linhasValor] = val;
-        //printf("%.2f\n",val);
         linhasValor++;
     }
 
     while (fgets(nomeGastos[linhasNome], 5000, nomeDespesa ) != NULL)
     {
-         //= nome;
-        //printf("%s\n",nome);
         linhasNome++;
     }
     
-
-    // for(int i=0;i<linhasValor;i++){
-    //     printf("%.2f\n", valor[i]);
-    // }
-
-    // //printf("\n\nNúmero de linhasValor no arquivo: %d\n", linhasValor);
-    // for(int i=0;i<linhasNome;i++){
-
-    //     printf("%s", nomeGastos[i]);
-    // }
-
-    //while(fgets())
     fclose(nomeDespesa);
     fclose(valorDespesa);
     
@@ -64,7 +47,8 @@ void verificarGastos(){
         printf ("\t*------------------------------------------------------*\n");
     for(int i=0;i<linhasValor;i++){
         printf ("\t| %s                                    | %.2f                    |\n", nomeGastos[i], valor[i]);
-        printf ("\t*------------------------------------------------------*\n");
+        
     }
+        printf ("\t*------------------------------------------------------*\n");
 
 }

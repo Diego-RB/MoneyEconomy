@@ -1,4 +1,2 @@
 Uva
-Pera
-manga
-morango
+laranja

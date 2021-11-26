@@ -8,20 +8,10 @@
 #include "sobre.c"
 
 
-
-// struct Gastos
-// {1
-//     char Nome[150];
-//     float Valor;
-// };
-
-//struct Gastos gastos[] = {{" ", 0.0}};
-
 void main (){
    int opcao;
 
    SetConsoleOutputCP(65001);
-   printf("BEM VINDO!");
    menu:
    opcao = menu();
    system("cls");
