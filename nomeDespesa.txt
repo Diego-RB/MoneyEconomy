@@ -1,2 +1,4 @@
 Uva
 laranja
+Pilhas
+Radio
